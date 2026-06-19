@@ -1,0 +1,23 @@
+name: dotnet-playwright
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet restore LwX.Web.Testing.slnx
+      - run: dotnet build LwX.Web.Testing.slnx -c Release --no-restore
+      - run: pwsh samples/Sample.PlaywrightTests/bin/Release/net8.0/playwright.ps1 install --with-deps
+      - run: dotnet test samples/Sample.PlaywrightTests/Sample.PlaywrightTests.csproj -c Release --no-build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: test-results

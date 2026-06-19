@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+.idea/
+artifacts/
+test-results/
+node_modules/
+playwright-report/

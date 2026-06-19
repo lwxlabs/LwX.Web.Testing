@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+    <PackageId>LwX.Web.Testing</PackageId>
+    <Version>1.0.0-preview.1</Version>
+    <Authors>LwX Labs</Authors>
+    <Company>LwX Labs</Company>
+    <Description>Universal Playwright-based testing toolkit for Blazor, MAUI Blazor Hybrid WebView2, Angular, React, Vue, Svelte, Solid, Astro, and plain web apps.</Description>
+    <PackageTags>playwright;testing;e2e;blazor;angular;react;vue;maui;webview2;ui-testing</PackageTags>
+    <RepositoryUrl>https://github.com/LwXLabs/LwX.Web.Testing</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Playwright" Version="1.53.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

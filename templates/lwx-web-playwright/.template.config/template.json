@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "LwX Labs",
+  "classifications": ["LwX", "Testing", "Playwright", "Web"],
+  "identity": "LwX.Web.Testing.Playwright",
+  "name": "LwX Web Playwright Test Project",
+  "shortName": "lwx-web-playwright",
+  "sourceName": "Company.Web.Tests",
+  "preferNameDirectory": true
+}

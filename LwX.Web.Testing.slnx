@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/LwX.Web.Testing/LwX.Web.Testing.csproj" />
+  <Project Path="src/LwX.Web.Testing.Xunit/LwX.Web.Testing.Xunit.csproj" />
+  <Project Path="samples/Sample.WebApp/Sample.WebApp.csproj" />
+  <Project Path="samples/Sample.PlaywrightTests/Sample.PlaywrightTests.csproj" />
+</Solution>

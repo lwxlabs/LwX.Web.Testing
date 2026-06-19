@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+    <PackageId>LwX.Web.Testing.Xunit</PackageId>
+    <Version>1.0.0-preview.1</Version>
+    <Authors>LwX Labs</Authors>
+    <Company>LwX Labs</Company>
+    <Description>xUnit integration for LwX.Web.Testing.</Description>
+    <PackageTags>playwright;testing;xunit;e2e;web</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../LwX.Web.Testing/LwX.Web.Testing.csproj" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+  </ItemGroup>
+</Project>
