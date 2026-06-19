@@ -4,8 +4,7 @@
     <IsPackable>true</IsPackable>
     <PackageId>LwX.Web.Testing</PackageId>
     <Version>1.0.0-preview.1</Version>
-    <Authors>LwX Labs</Authors>
-    <Company>LwX Labs</Company>
+    <Authors>LwXLabs</Authors>
     <Description>Universal Playwright-based testing toolkit for Blazor, MAUI Blazor Hybrid WebView2, Angular, React, Vue, Svelte, Solid, Astro, and plain web apps.</Description>
     <PackageTags>playwright;testing;e2e;blazor;angular;react;vue;maui;webview2;ui-testing</PackageTags>
     <RepositoryUrl>https://github.com/LwXLabs/LwX.Web.Testing</RepositoryUrl>
