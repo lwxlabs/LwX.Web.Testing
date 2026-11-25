@@ -2,7 +2,7 @@
 
 Universal Playwright-based testing toolkit for normal web apps and component libraries.
 
-It is designed to replace duplicated testing packages by putting shared browser/testing behavior in one package and keeping framework-specific helpers as adapters.
+Shared browser testing, framework adapters, diagnostics and structured reports.
 
 ## Supports
 
@@ -15,10 +15,10 @@ It is designed to replace duplicated testing packages by putting shared browser/
 - Vue / Nuxt / Vite Vue
 - Svelte, Solid, Astro, plain HTML/JS
 
-## Install
+## Use from source
 
 ```powershell
-dotnet add package LwX.Web.Testing
+dotnet add reference ../LwX.Web.Testing/src/LwX.Web.Testing/LwX.Web.Testing.csproj
 ```
 
 Install Playwright browsers:
@@ -31,10 +31,11 @@ pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
 
 ```csharp
 using LwX.Web.Testing.Options;
-using LwX.Web.Testing.Playwright;
+using LwX.Web.Testing.Xunit;
+using Xunit;
 using LwX.Web.Testing.Extensions;
 
-public sealed class DashboardTests : PlaywrightTestBase
+public sealed class DashboardTests : XunitPlaywrightTestBase
 {
     protected override void Configure(LwXWebTestingOptions options)
     {
@@ -168,7 +169,7 @@ These are blocked outside the configured testing environment by default.
 
 ## Production fixes included
 
-This ZIP now contains the core package and the optional xUnit integration package:
+The solution contains the core package and an optional xUnit integration package:
 
 ```txt
 src/LwX.Web.Testing
@@ -191,3 +192,17 @@ The xUnit package provides `XunitPlaywrightTestBase`, which correctly implements
 App runners now pump stdout/stderr in the background to avoid deadlocks with Vite, Angular, Next.js, Nuxt, or `dotnet run`.
 
 `MapLwXWebTestRoutes()` now enforces `RequireTestHeader` when enabled.
+
+## Example
+
+From the repository root, using the .NET 10 SDK:
+
+```powershell
+dotnet build LwX.Web.Testing.slnx -c Release
+pwsh samples/Sample.PlaywrightTests/bin/Release/net8.0/playwright.ps1 install chromium
+dotnet test samples/Sample.PlaywrightTests -c Release --no-build
+```
+
+Use [LwX.Web.Testing.Viewer](https://github.com/lwxlabs/LwX.Web.Testing.Viewer) to inspect local reports.
+
+MIT license.
